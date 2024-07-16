@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "name": "tskmngr",
   "version": "1.0.0",
   "main": "expo/AppEntry.js",
@@ -23,6 +26,7 @@
     "react-native-web": "~0.19.10"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-methods": "^7.18.6",
     "metro-react-native-babel-preset": "^0.76.0",
     "react-native-dotenv": "^3.4.8"
   },
