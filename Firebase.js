@@ -1,16 +1,17 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from 'firebase/auth';
 import { getFirestore, doc, setDoc, updateDoc , deleteDoc, getDoc, onSnapshot, collection, query, orderBy, limit, getDocs, where } from 'firebase/firestore';
+import { API_KEY, AUTH_DOMAIN, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID, APP_ID, MEASUREMENT_ID } from '@env'
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAfmQ42AkINLN_H89_jKp5NIPWevPw7lZc",
-    authDomain: "impulsetskmngr.firebaseapp.com",
-    projectId: "impulsetskmngr",
-    storageBucket: "impulsetskmngr.appspot.com",
-    messagingSenderId: "641179153606",
-    appId: "1:641179153606:web:ed5562eb12238768dfd3c7",
-    measurementId: "G-VFE9YGF45Z"
+  apiKey: API_KEY,
+  authDomain: AUTH_DOMAIN,
+  projectId: PROJECT_ID,
+  storageBucket: STORAGE_BUCKET,
+  messagingSenderId: MESSAGING_SENDER_ID,
+  appId: APP_ID,
+  measurementId: MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
@@ -23,7 +24,7 @@ class Fire {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       
-      // Create a new document for the user in Firestore
+      
       await setDoc(doc(db, 'users', user.uid), {
         email: user.email,
         firstName,
