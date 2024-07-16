@@ -55,3 +55,14 @@ npx react-native run-android
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+## Environment Setup
+
+Create a .env file in the root directory with the following variables:
+
+API_KEY=your_api_key
+AUTH_DOMAIN=your_auth_domain
+PROJECT_ID=your_project_id
+STORAGE_BUCKET=your_storage_bucket
+MESSAGING_SENDER_ID=your_messaging_sender_id
+APP_ID=your_app_id
+MEASUREMENT_ID=your_measurement_id
