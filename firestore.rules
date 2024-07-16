@@ -2,8 +2,22 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /users/{userId} {
+      // Users can read and write their own data
       allow read, write: if request.auth != null && request.auth.uid == userId;
-      allow read: if request.auth != null; // Allows reading all user documents for the leaderboard
+      
+      // All authenticated users can read other users' data (for leaderboard)
+      allow read: if request.auth != null;
+
+      // Nested collections (if you have any)
+      match /lists/{listId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
     }
+
+    // Add rules for other collections if needed
+    // For example, if you have a separate 'tasks' collection:
+    // match /tasks/{taskId} {
+    //   allow read, write: if request.auth != null && resource.data.userId == request.auth.uid;
+    // }
   }
 }
