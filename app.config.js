@@ -39,7 +39,7 @@ export default {
           measurementId: process.env.MEASUREMENT_ID,
         },
         eas: {
-          projectId: ""
+          projectId: "44e7dc61-f61e-402c-840a-e138f52cfc11"
         }
       },
       plugins: [
