@@ -39,9 +39,11 @@ yarn install
 ## Running the App
 
 For iOS:
-npx react-native run-ios
+npm run start 
+then press i
 For Android:
-npx react-native run-android
+npm run start
+then press a
 
 ## Project Structure
 
